@@ -5,8 +5,7 @@ const STATIC_ASSETS = [
   "/manifest.json",
   "/data/wiki-data.json",
   "/icon-192x192.png",
-  "/icon-512x512.png",
-  "/global.css"
+  "/icon-512x512.png"
 ]
 
 // Install event - cache static assets
