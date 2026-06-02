@@ -17,6 +17,13 @@ FEATURES
   #4 Youtube URL if a video demonstration is needed
   #5 Category / Difficulty / Customizable tags.
 
+HOW TO RUN LOCALLY
+==================
+1. This will work on the VSCODE IDE (Download it)
+2. Install node.js (version 24.16.0 as of this moment) and check if it's installed correctly by typing in the VSCODE terminal "node -v" to check your version installed.
+3. Then type "npm install" in the terminal to download next.js dependencies, it will provide a (node_modules) folder and a package_lock.json file.
+4. Lastly after doing all steps 1 - 3, type "npm run dev" in the terminal, it will show your localhost port 3000 host the webapp / PWA locally.
+
 
 FUTURE GOALS
 ==================
