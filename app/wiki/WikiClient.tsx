@@ -1,9 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useMemo, useEffect } from "react"
 import { useSearchParams } from "next/navigation"
 import { WifiOff, Menu, X, Home, Pencil } from "lucide-react"
-import { useArticles } from "@/hooks/use-articles"
+import { getAllArticles, searchArticles, getArticleById } from "@/lib/data-loader"
 import { SearchBar } from "@/components/wiki/search-bar"
 import { ArticleList } from "@/components/wiki/article-list"
 import { ArticleView } from "@/components/wiki/article-view"
@@ -28,10 +28,15 @@ export default function WikiClient() {
     }
   }, [searchParams])
 
-  const { articles: allArticles } = useArticles()
-  const { articles: filteredArticles } = useArticles(searchQuery)
+  const allArticles = useMemo(() => getAllArticles(), [])
 
-  const selectedArticle = allArticles.find((a) => a.id === selectedId) ?? null
+  const filteredArticles = useMemo(() => {
+    return searchArticles(searchQuery)
+  }, [searchQuery])
+
+  const selectedArticle = useMemo(() => {
+    return selectedId ? getArticleById(selectedId) ?? null : null
+  }, [selectedId])
 
   const handleSelectArticle = (id: string) => {
     setSelectedId(id)
