@@ -1,10 +1,11 @@
 "use client"
 
 import Link from "next/link"
-import { 
-  Book, 
-  Download, 
-  WifiOff, 
+import useSWR from "swr"
+import {
+  Book,
+  Download,
+  WifiOff,
   FileJson,
   ExternalLink,
   CheckCircle2,
@@ -16,13 +17,22 @@ import {
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { usePWA } from "@/hooks/use-pwa"
-import { getWikiMeta, getAllArticles, getCategories } from "@/lib/data-loader"
+import type { WikiData } from "@/lib/types"
+
+const fetcher = (url: string) => fetch(url).then((res) => res.json())
+
+const fallbackData: WikiData = {
+  meta: { title: "VasWiki", description: "", version: "1.0.0", author: "", lastUpdated: "" },
+  articles: [],
+  categories: [],
+}
 
 export default function LandingPage() {
   const { canInstall, isInstalled, installApp } = usePWA()
-  const meta = getWikiMeta()
-  const articles = getAllArticles()
-  const categories = getCategories()
+  const { data: wikiData = fallbackData } = useSWR<WikiData>("/api/articles?meta=true", fetcher)
+  const meta = wikiData.meta
+  const articles = wikiData.articles
+  const categories = wikiData.categories
 
   return (
     <div className="min-h-screen bg-background">
