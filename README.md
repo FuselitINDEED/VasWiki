@@ -1,5 +1,9 @@
 The First version of VasWiki, a webapp / PWA that consists of articles based on GBVSR Vaseraga, it can be versatile to what information is posted.
 
+IMPORTANT NOTE
+===================
+I can't realistically host the webapp / PWA because it cost money to provide bandwidth and function support when hosting. If I were to host this as a static site, then adding / editing articles won't update in real time and that won't allow users to create new articles. Therefore this project won't be hosted as of right now until I have the proper funds.
+
 FEATURES
 ===================
 1. Hosts a front page showcasing the articles / categories amount.
