@@ -1,6 +1,6 @@
 The First version of VasWiki, a webapp / PWA that consists of articles based on GBVSR Vaseraga, it can be versatile to what information is posted.
 
-==================================================================
+===================
 1. Hosts a front page showcasing the articles / categories amount.
 2. PWA installation button.
 3. Ability to add / edit or delete articles posted behind password authentication.
