@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "VasWiki",
+    "description": "A Wiki/PWA for GBVSR Vaseraga knowledge.",
+    "version": "1.0.0",
+    "author": "Fuselit",
+    "lastUpdated": "2026-06-02"
+  },
+  "categories": [
+    {
+      "id": "Fundamentals",
+      "name": "Fundamentals",
+      "description": "Basic concepts to understand.",
+      "icon": "book"
+    },
+    {
+      "id": "Optimals",
+      "name": "Optimals",
+      "description": "Best way to go a certain concept.",
+      "icon": "book"
+    },
+    {
+      "id": "Unoptimals",
+      "name": "Unoptimals",
+      "description": "For fun however could be useful somehow.",
+      "icon": "book"
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "Test",
+      "author": "Fuselit",
+      "description": "(Placeholder)",
+      "tags": [
+        "Sussy"
+      ],
+      "category": "Fundamentals",
+      "createdAt": "2026-01-01",
+      "difficulty": "beginner"
+    }
+  ]
+}
